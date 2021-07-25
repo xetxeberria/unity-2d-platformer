@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &521898918
 Animator:
   serializedVersion: 3
@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 1999034024}
   - component: {fileID: 1999034025}
   - component: {fileID: 1999034026}
+  - component: {fileID: 1999034027}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -861,6 +862,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9f9c8daeedd1b418233cc3f5da7aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1999034027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999034015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc05c1708a690d4eb1fd4442a7b7502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2088590665
