@@ -15,10 +15,23 @@ public class BatMovement : EnemyMovement
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float timeBetweenMovements;
+
     private Vector3 initialPosition;
     private Vector3 finalPosition;
 
     private float movementDuration;
+
+    private FlipSprite flipSprite;
+
+    private BatFlyAnimation flyAnimation;
+
+    private void Awake()
+    {
+        flipSprite = GetComponent<FlipSprite>();
+        flyAnimation = GetComponent<BatFlyAnimation>();
+    }
 
     private void Start()
     {
@@ -33,13 +46,21 @@ public class BatMovement : EnemyMovement
     private IEnumerator Move()
     {
         while (true) {
+            flyAnimation.Fly();
             Tween moveTween = transform.DOMove(finalPosition, movementDuration).SetEase(ease);
-
             yield return moveTween.WaitForCompletion();
 
+            flyAnimation.StopFlying();
+            flipSprite.Flip();
+            yield return new WaitForSeconds(timeBetweenMovements);
+
+            flyAnimation.Fly();
             moveTween = transform.DOMove(initialPosition, movementDuration).SetEase(ease);
-
             yield return moveTween.WaitForCompletion();
+
+            flyAnimation.StopFlying();
+            flipSprite.Flip();
+            yield return new WaitForSeconds(timeBetweenMovements);
         }
     }
 }

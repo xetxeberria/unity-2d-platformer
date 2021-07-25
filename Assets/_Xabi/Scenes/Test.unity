@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 521898919}
   - component: {fileID: 521898918}
   - component: {fileID: 521898921}
+  - component: {fileID: 521898922}
+  - component: {fileID: 521898923}
   m_Layer: 0
   m_Name: BatEnemy
   m_TagString: Untagged
@@ -220,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521898917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.300434, y: -1.1178864, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -239,8 +241,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ease: 1
-  movementDistance: 4
-  speed: 2
+  movementDistance: 10
+  speed: 5
+  timeBetweenMovements: 1
+--- !u!114 &521898922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521898917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721a402c0a81059409b3903f1eb65e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &521898923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521898917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba1eb437fc0fb349a76821b8a284a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &593641103
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,13 +643,15 @@ GameObject:
   - component: {fileID: 1999034020}
   - component: {fileID: 1999034021}
   - component: {fileID: 1999034022}
+  - component: {fileID: 1999034023}
+  - component: {fileID: 1999034024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1999034016
 Animator:
   serializedVersion: 3
@@ -687,7 +716,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.38, y: 6.11}
+  m_Size: {x: 2.46, y: 2.0366666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -747,7 +776,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.46, y: 2.0366666}
-    newSize: {x: 7.38, y: 6.11}
+    newSize: {x: 2.46, y: 2.0366666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -784,6 +813,30 @@ MonoBehaviour:
   checkRadius: 0.1
   jumpForce: 5
   jumpTime: 0.5
+--- !u!114 &1999034023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999034015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c773262ae8c29e149940ad37c8fa3054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1999034024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999034015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf629ee0ef9c2d144b069eabf54ace35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2088590665
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: ba557e6213008b046915de7113b7c561
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 713739402863733552
+    second: 2D_SM02_IdleBlink_001_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +104,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 2D_SM02_IdleBlink_001_0
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 105
+        width: 478
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b64e19436b7e900800000000000000
+      internalID: 713739402863733552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

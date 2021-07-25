@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+
     private float horizontalMovement;
 
     [SerializeField]
@@ -17,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        horizontalMovement = Input.GetAxis("Horizontal") * speed;
+        horizontalMovement = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
     }
 }
