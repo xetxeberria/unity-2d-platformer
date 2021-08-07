@@ -9,16 +9,23 @@ public class PlayerAttack : MonoBehaviour
 
     private PlayerAttackAnimation attackAnimation;
 
+    private void OnEnable()
+    {
+        attackAnimation.playerAttackAnimationEnded += OnAttackAnimationEnded;
+    }
+
+    private void OnDisable()
+    {
+        attackAnimation.playerAttackAnimationEnded -= OnAttackAnimationEnded;
+    }
+
     private void Awake()
     {
         if (attackCollider == null) {
             attackCollider = GetComponentInChildren<PlayerAttackCollider>();
         }
-    }
 
-    private void Start()
-    {
-        
+        attackAnimation = GetComponent<PlayerAttackAnimation>();
     }
 
     private void Update()
@@ -26,5 +33,10 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) {
             attackCollider.EnableCollider();
         }
+    }
+
+    private void OnAttackAnimationEnded()
+    {
+        attackCollider.DisableCollider();
     }
 }

@@ -6,6 +6,9 @@ public class PlayerAttackAnimation : MonoBehaviour
 {
     private Animator animator;
 
+    public delegate void PlayerAttackAnimationEnd();
+    public event PlayerAttackAnimationEnd playerAttackAnimationEnded;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -15,6 +18,13 @@ public class PlayerAttackAnimation : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")) {
             animator.SetTrigger("attack");
+        }
+    }
+
+    public void AttackAnimationEnded()
+    {
+        if (playerAttackAnimationEnded != null) {
+            playerAttackAnimationEnded();
         }
     }
 }

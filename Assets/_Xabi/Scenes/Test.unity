@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 521898921}
   - component: {fileID: 521898922}
   - component: {fileID: 521898923}
-  - component: {fileID: 521898924}
+  - component: {fileID: 521898925}
   m_Layer: 0
   m_Name: BatEnemy
   m_TagString: Untagged
@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba1eb437fc0fb349a76821b8a284a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &521898924
-BoxCollider2D:
+--- !u!58 &521898925
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -282,19 +282,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.78, y: 1.3966666}
-    newSize: {x: 1.78, y: 1.3966666}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.026817411, y: 0.03575632}
   serializedVersion: 2
-  m_Size: {x: 1.78, y: 1.3966666}
-  m_EdgeRadius: 0
+  m_Radius: 0.30896083
 --- !u!1 &593641103
 GameObject:
   m_ObjectHideFlags: 0
