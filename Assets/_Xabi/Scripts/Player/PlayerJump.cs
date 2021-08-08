@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump : MonoBehaviour, IJump
 {
     private Rigidbody2D rb;
     
@@ -27,6 +27,18 @@ public class PlayerJump : MonoBehaviour
 
     private void Update()
     {
+        Jump();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isJumping) return;
+
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+
+    public void Jump()
+    {
         isGrounded = Physics2D.OverlapCircle(groundChecker.position, checkRadius);
         
         if (Input.GetButtonDown("Jump") && isGrounded) {
@@ -45,13 +57,6 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetButtonUp("Jump")) {
             isJumping = false;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        if (!isJumping) return;
-
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     public bool IsJumping()
