@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMove
 {
     private Rigidbody2D rb;
 
@@ -18,11 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        horizontalMovement = Input.GetAxis("Horizontal");
+        Move();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
+    }
+
+    public void Move()
+    {
+        horizontalMovement = Input.GetAxis("Horizontal");
     }
 }
