@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 
-public class BatMovement : EnemyMovement
+public class BatMovement : EnemyMovement, IMove
 {
     [SerializeField]
     private Ease ease;
@@ -39,11 +39,16 @@ public class BatMovement : EnemyMovement
         finalPosition = new Vector3(initialPosition.x + movementDistance, initialPosition.y, initialPosition.z);
         movementDuration = movementDistance / speed;
 
-        StartCoroutine(Move());
+        Move();
+    }
+
+    public void Move()
+    {
+        StartCoroutine(MovementCycle());
     }
 
 
-    private IEnumerator Move()
+    private IEnumerator MovementCycle()
     {
         while (true) {
             flyAnimation.Fly();
