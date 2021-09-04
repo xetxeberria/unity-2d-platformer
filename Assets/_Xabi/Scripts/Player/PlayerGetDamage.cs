@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatGetDamage : MonoBehaviour, IGetDamage
+public class PlayerGetDamage : MonoBehaviour, IGetDamage
 {
-    private LayerMask playerAttackLayer;
+    private LayerMask enemyLayer;
 
-    private void Start()
+    void Start()
     {
-        playerAttackLayer = LayerMask.NameToLayer("PlayerAttack");
+        enemyLayer = LayerMask.NameToLayer("Enemy");    
     }
 
     public void GetDamage(int damage)

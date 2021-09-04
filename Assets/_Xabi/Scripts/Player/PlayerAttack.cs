@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour, IAttack
@@ -7,7 +5,7 @@ public class PlayerAttack : MonoBehaviour, IAttack
     [SerializeField]
     private PlayerAttackCollider attackCollider;
     private PlayerAttackAnimation attackAnimation;
-    private bool isAttacking;
+    public bool isAttacking;
 
     private void OnEnable()
     {
@@ -36,12 +34,14 @@ public class PlayerAttack : MonoBehaviour, IAttack
     private void OnAttackAnimationEnded()
     {
         attackCollider.DisableCollider();
+        isAttacking = false;
     }
 
     public void Attack()
     {
         if (Input.GetButtonDown("Fire1")) {
             attackCollider.EnableCollider();
+            isAttacking = true;
         }
     }
 
